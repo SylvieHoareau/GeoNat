@@ -1,30 +1,36 @@
+<!--HeaderSection.vue-->
 <template>
     <div>
-        <b-navbar toggleable="lg" type="dark" variant="info">
-            <b-navbar-brand to="/">GeoNat</b-navbar-brand>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success" style="background-color: #388E3C">
+            <router-link class="navbar-brand text-white" to="/">GeoNat</router-link>
+            <button class="navbar-toggler" type="button" data-target="#nav-collapse" aria-controls="nav-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-            <b-collapse id="nav-collapse" is-nav>
-                <b-navbar-nav>
+            <div class="collapse navbar-collapse" id="nav-collapse">
+                <ul class="navbar-nav">
                     <!--Accueil-->
-                    <b-nav-item to="/">Accueil</b-nav-item>
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white" to="/">Accueil</router-link>
+                    </li>
                     <!--Cartes-->
-                    <b-nav-item to="/cartes">Cartes</b-nav-item>
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white" to="/carte">Cartes</router-link>
+                    </li>
                     <!--Contact-->
-                    <b-nav-item to="/contact">Contact</b-nav-item>
-                </b-navbar-nav>
-            </b-collapse>
-        </b-navbar>
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white" to="/contact">Contact</router-link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </template>
 
 <script>
+
 export default {
   name: 'HeaderSection',
-  props: {
-    msg: String
-  }
 }
 </script>
 
