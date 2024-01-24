@@ -1,15 +1,15 @@
-<!--ContactPage.vue-->
+<!--SignupPage.vue-->
 <template>
     <div>
         <HeaderSection />
-        <h1>Pour me contacter</h1>
+        <h1>Sign Up</h1>
     </div>
 </template>
 
 <script>
 import HeaderSection from '../components/HeaderSection.vue' 
 export default {
-  name: 'ContactPage',
+  name: 'SignupPage',
   components: {
     HeaderSection
   }
