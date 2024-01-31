@@ -5,14 +5,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 import 'bootstrap/dist/css/bootstrap.css'
 import HomePage from '../src/pages/HomePage.vue'
 import ContactPage from '../src/pages/ContactPage.vue'
+import SignupPage from '../src/pages/SignupPage.vue'
 import MapReunion from '../src/maps/MapReunion.vue'
-import SingupPage from '../src/pages/SignupPage.vue'
+import IgnMap from '../src/maps/IgnMap.vue'
 
 const routes = [
     { path: '/', component: HomePage },
-    { path: '/carte', component: MapReunion },
+    { path: '/osm', component: MapReunion },
+    { path: '/ign', component: IgnMap },
     { path: '/contact', component: ContactPage },
-    { path: '/signup', component: SingupPage }
+    { path: '/signup', component: SignupPage }
 ]
 
 const router = createRouter({
