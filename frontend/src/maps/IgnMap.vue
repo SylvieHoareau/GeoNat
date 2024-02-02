@@ -1,3 +1,4 @@
+<!--IgnMap.vue-->
 <template>
     <div>
         <div id="map" class="map"></div>  
@@ -12,12 +13,28 @@ import WMTS from 'ol/source/WMTS.js';
 import WMTSTileGrid from 'ol/tilegrid/WMTS.js';
 import {fromLonLat, get as getProjection} from 'ol/proj.js';
 import {getWidth} from 'ol/extent.js';
+import axios from 'axios';
 
 export default {
     name: 'IgnMap',
+    data() {
+        return {
+            apiKey: null
+        }
+    },
     mounted() {
+        // Récupérer la clé API dans le backend
+        axios.get('http://localhost:3000/api/getApiKey')
+            .then(response => {
+                this.apiKey = response.data.apiKey;
+                // Vérifier la clé API
+                console.log('API Key:', this.apiKey);
+            })
+            .catch(error => {
+                console.error('Error fetching API Key:', error);
+            })
         // Initialisation de la carte IGN
-        this.initMap
+        this.initMap()
     },
     methods: {
         initMap() {
@@ -48,7 +65,6 @@ export default {
             // For more information about the IGN API key see
             // https://geoservices.ign.fr/blog/2021/01/29/Maj_Cles_Geoservices.html
 
-            const apiKey = '';
             const ign_source = new WMTS({
                 url: 'https://wxs.ign.fr/choisirgeoportail/geoportail/wmts',
                 layer: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2',
@@ -63,7 +79,7 @@ export default {
                     'information géographique et forestière" alt="IGN"></a>',
                 requestEncoding: 'REST',
                 tileLoadFunction: function (imageTile, src) {
-                    imageTile.getImage().src = src + '&key=' + apiKey;
+                    imageTile.getImage().src = src + '&key=' + this.apiKey;
                 }
             });
 
@@ -81,7 +97,7 @@ export default {
 
 <style scoped>
 .map {
-    width: 100%;
+    width: 1200px;
     height: 400px;
 }
 </style>

@@ -1,4 +1,19 @@
+// vue.config.js
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
-  transpileDependencies: true
+  transpileDependencies: true,
+  configureWebpack: {
+    resolve: {
+      fallback: {
+        "path": false,
+        "os": false,
+        "crypto": false,
+        "stream": false
+      }
+    }
+  },
+  pluginOptions: {
+    foo: '__VUE_PROD_HYDRATION_MISMATCH_DETAILS__'
+  }
 })

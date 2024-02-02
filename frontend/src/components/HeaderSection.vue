@@ -18,8 +18,16 @@
                         <router-link class="nav-link text-white hover-effect" to="/osm">Cartes OSM</router-link>
                     </li>
                     <!--Cartes-->
-                      <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/ign">Cartes IGN</router-link>
+                    </li> -->
+                    <!--Cartes-->
+                    <!-- <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/ortho">Orthophotos</router-link>
+                    </li> -->
+                    <!--Cartes-->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/commune">Communes</router-link>
                     </li>
                     <!--Contact-->
                     <li class="nav-item">
