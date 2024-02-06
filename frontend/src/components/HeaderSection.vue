@@ -18,16 +18,20 @@
                         <router-link class="nav-link text-white hover-effect" to="/osm">Cartes OSM</router-link>
                     </li>
                     <!--Cartes-->
-                    <!-- <li class="nav-item">
-                        <router-link class="nav-link text-white hover-effect" to="/ign">Cartes IGN</router-link>
-                    </li> -->
-                    <!--Cartes-->
-                    <!-- <li class="nav-item">
-                        <router-link class="nav-link text-white hover-effect" to="/ortho">Orthophotos</router-link>
-                    </li> -->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/commune">Communes Leaflet</router-link>
+                    </li>
                     <!--Cartes-->
                     <li class="nav-item">
-                        <router-link class="nav-link text-white hover-effect" to="/commune">Communes</router-link>
+                        <router-link class="nav-link text-white hover-effect" to="/communeOL">Communes Open Street Map</router-link>
+                    </li>
+                    <!--Section 1 - Eau-->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/eau">Eau</router-link>
+                    </li>
+                    <!--Section 2 - Faune & Flore-->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/taxons">Groupe de taxons</router-link>
                     </li>
                     <!--Contact-->
                     <li class="nav-item">

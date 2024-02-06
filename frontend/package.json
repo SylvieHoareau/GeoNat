@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^1.6.7",
     "bootstrap": "^5.3.2",
+    "boxicons": "^2.1.4",
     "core-js": "^3.8.3",
     "crypto-browserify": "^3.12.0",
     "geoportal-extensions-openlayers": "^3.4.0-beta4",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@types/leaflet": "^1.9.8",
     "@types/ol": "^7.0.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",

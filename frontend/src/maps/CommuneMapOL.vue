@@ -74,11 +74,11 @@ export default {
                         // Pour inspecter la structure des données
                         console.log('Données brutes:', response.data);
 
-                        const pageData = response.data.features;
-                        console.log('pageData', pageData);
+                        state.pageData = response.data.features;
+                        console.log('pageData', state.pageData);
 
                         // TRansfromation des coordonnées de EPSG:4326 à EPSG:3857
-                        pageData.forEach(feature => {
+                        state.pageData.forEach(feature => {
                             feature.geometry.coordinates = feature.geometry.coordinates.map(polygon => 
                                 polygon.map(linearRing => 
                                     linearRing.map(coordPair =>
@@ -88,9 +88,9 @@ export default {
                             console.log('Coordonnées transformées:', feature.geometry.coordinates)
                         })
 
-                        state.pageData = [ ...state.pageData, ...pageData];
+                        state.pageData = [ ...state.pageData];
 
-                        allData.push(...pageData);
+                        allData.push(...state.pageData);
                     }
 
                     // Initialiser la couche vectorielle avec OpenLayers
@@ -101,7 +101,7 @@ export default {
                     // Ajouter les fonctionnalités à la couche 
                     const features = geoJSONFormat.readFeatures({
                         type: 'FeatureCollection',
-                        features: pageData
+                        features: state.pageData
                     })
 
                     state.vectorSource.addFeatures(features);

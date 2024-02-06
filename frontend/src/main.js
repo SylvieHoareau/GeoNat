@@ -10,6 +10,9 @@ import MapReunion from '../src/maps/MapReunion.vue';
 // import IgnMap from '../src/maps/IgnMap.vue';
 // import OrthoMap from '../src/maps/OthoMap.vue';
 import CommuneMap from '../src/maps/CommuneMap.vue';
+import CommuneMapOL from '../src/maps/CommuneMapOL.vue';
+import TaxonsGroups from '../src/datas/TaxonsGroups.vue';
+import EauHydrometrie from '../src/maps/EauHydrometrie.vue';
 
 const routes = [
     { path: '/', component: HomePage },
@@ -17,6 +20,9 @@ const routes = [
     // { path: '/ign', component: IgnMap },
     // { path: '/ortho', component: OrthoMap },
     { path: '/commune', component: CommuneMap },
+    { path: '/communeol', component: CommuneMapOL },
+    { path: '/eau', component: EauHydrometrie },
+    { path: '/taxons', component: TaxonsGroups },
     { path: '/contact', component: ContactPage },
     { path: '/signup', component: SignupPage }
 ]
