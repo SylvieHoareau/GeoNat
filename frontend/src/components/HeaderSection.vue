@@ -33,6 +33,14 @@
                     <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/taxons">Groupe de taxons</router-link>
                     </li>
+                    <!--Test IGN-->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/testign">Test IGN</router-link>
+                    </li>
+                     <!--IGN SDK-->
+                     <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/ignsdk">IGN SDK</router-link>
+                    </li>
                     <!--Contact-->
                     <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/contact">Contact</router-link>

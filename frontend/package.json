@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@ignf-geoportal/sdk-2d": "^3.4.3",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.2",
     "boxicons": "^2.1.4",
@@ -17,7 +18,8 @@
     "leaflet": "^1.9.4",
     "leaflet-tilelayer-geojson": "^1.0.4",
     "ol": "^8.2.0",
-    "ol-ext": "^4.0.14",
+    "ol-ext": "^4.0.15",
+    "ol-mapbox-style": "^12.2.1",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "stream-browserify": "^3.0.0",
