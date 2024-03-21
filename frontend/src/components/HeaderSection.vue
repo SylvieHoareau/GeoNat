@@ -41,6 +41,10 @@
                      <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/ignsdk">IGN SDK</router-link>
                     </li>
+                    <!--Nature Map-->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/naturemap">Nature Map</router-link>
+                    </li>
                     <!--Contact-->
                     <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/contact">Contact</router-link>

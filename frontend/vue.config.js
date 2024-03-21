@@ -9,7 +9,8 @@ module.exports = defineConfig({
         "path": false,
         "os": false,
         "crypto": false,
-        "stream": false
+        "stream": false,
+        "timers": require.resolve("timers-browserify")
       }
     }
   },
