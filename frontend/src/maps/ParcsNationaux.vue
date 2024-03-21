@@ -7,13 +7,14 @@
         <!--Name : PROTECTEDAREAS.PN:pn-->
         <l-map :zoom="zoom" :center="center">
             <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-            <l-marker v-for="feature in features" :key="feature.id" :lat-lng="getLatLng(feature)"></l-marker>
+            <l-marker v-for="feature in features" :key="feature.id" :lat-lng="getPolygon(feature)"></l-marker>
         </l-map>
     </div>
 </template>
 
 <script>
 import HeaderSection from '@/components/HeaderSection.vue';
+import * as L from 'leaflet';
 import { LMap, LTileLayer, LMarker } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
@@ -38,13 +39,24 @@ export default {
         }
     },
     methods: {
-        getLatLng(feature) {
-            // Fonction pour extraire les coordonnées de chaque feature
-            // Vérifier si la feature a une géométrie avant d'essayer d'accéder aux coordonnées
-            if (feature.geometry) {
-                return [feature.geometry.coordinates[1], feature.geometry.coordinates[0]];
+        // getLatLng(feature) {
+        //     // Fonction pour extraire les coordonnées de chaque feature
+        //     // Vérifier si la feature a une géométrie avant d'essayer d'accéder aux coordonnées
+        //     if (feature.geometry) {
+        //         return [feature.geometry.coordinates[1], feature.geometry.coordinates[0]];
+        //     } else {
+        //         console.error('Feature does not have geometry:', feature);
+        //         return null;
+        //     }
+        // }
+        getPolygon(feature) {
+            // Vérifiez sir la feature a une géométrie de type Polygon
+            if (feature.geometry && feature.geometry.type === 'Polygon') {
+                // Créer un nouveau polygon Leaflet à partir des coordonnées
+                const polygon = L.polygon(feature.geometry.coordinates);
+                return polygon;
             } else {
-                console.error('Feature does not have geometry:', feature);
+                console.error('Feature does not have a Polygon geometry: ', feature);
                 return null;
             }
         }
