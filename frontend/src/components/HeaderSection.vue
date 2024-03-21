@@ -45,6 +45,10 @@
                     <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/ignwfs">Ign WFS</router-link>
                     </li>
+                    <!--Nature Map-->
+                    <li class="nav-item">
+                        <router-link class="nav-link text-white hover-effect" to="/parcsnationaux">Parcs Nationaux</router-link>
+                    </li>
                     <!--Contact-->
                     <li class="nav-item">
                         <router-link class="nav-link text-white hover-effect" to="/contact">Contact</router-link>
