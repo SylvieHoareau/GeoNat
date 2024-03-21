@@ -15,7 +15,7 @@ import TaxonsGroups from '../src/datas/TaxonsGroups.vue';
 import EauHydrometrie from '../src/maps/EauHydrometrie.vue';
 import TestIgn from '../src/maps/TestIgn.vue';
 import IgnSdk from '../src/maps/IgnSdk.vue';
-import NatureMap from './maps/NatureMap.vue';
+import IgnWfs from './maps/IgnWfs.vue';
 
 
 const routes = [
@@ -31,7 +31,7 @@ const routes = [
     { path: '/taxons', component: TaxonsGroups },
     { path: '/testign', component: TestIgn },
     { path: '/ignsdk', component: IgnSdk },
-    { path: '/naturemap', component: NatureMap }
+    { path: '/ignwfs', component: IgnWfs }
 
 ]
 

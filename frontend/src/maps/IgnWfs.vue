@@ -3,6 +3,7 @@
     <div>
         <HeaderSection/>
         <h1>IGN | Service de sélection WFS</h1>
+        <input v-model="search" placeholder="Rechercher ...">
         <table>
             <thead>
                 <tr>
@@ -14,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="feature in features" :key="feature.Name[0]">
+                <tr v-for="feature in filteredFeatures" :key="feature.Name[0]">
                     <td>{{ feature.Title[0] }}</td>
                     <td>{{ feature.Name[0] }}</td>
                     <td>{{ feature.DefaultCRS[0] }}</td>
@@ -31,13 +32,24 @@ import axios from 'axios';
 import { parseString } from 'xml2js'; 
 
 export default {
-    name: 'NatureMap',
+    name: 'IgnWfs',
     components: {
         HeaderSection
     },
     data() {
         return {
+            search: '',
             features: []
+        }
+    },
+    computed: {
+        filteredFeatures() {
+            if (!this.search) {
+                return this.features;
+            }
+            return this.features.filter(feature => {
+                return feature.Title[0].toLowerCase().includes(this.search.toLowerCase());
+            })
         }
     },
     async created() {
@@ -57,14 +69,19 @@ export default {
 </script>
 
 <style scoped>
-   table {
-    width: 100%;
-    border-collapse: collapse
-   }
+    input {
+        padding: 1em;
+        margin: 1em;
+    }
 
-   th, td {
-    border: 1px solid black;
-    padding: 5px;
-    text-align: left;
-   }
+    table {
+        width: 100%;
+        border-collapse: collapse
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: left;
+    }
 </style>

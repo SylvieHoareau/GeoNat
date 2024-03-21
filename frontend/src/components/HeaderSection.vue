@@ -43,7 +43,7 @@
                     </li>
                     <!--Nature Map-->
                     <li class="nav-item">
-                        <router-link class="nav-link text-white hover-effect" to="/naturemap">Nature Map</router-link>
+                        <router-link class="nav-link text-white hover-effect" to="/ignwfs">Ign WFS</router-link>
                     </li>
                     <!--Contact-->
                     <li class="nav-item">
